@@ -1,0 +1,65 @@
+
+    Виды защиты: (https://chat.qwen.ai/s/e6e18114-118f-4e78-b35b-f9940cb8f744?fev=0.0.85)
+    1. CSP (Content Security Policy) - Nginx / NextJS / Node.js
+    2. HTTPS (HTTP Secure) - Nginx
+    3. X-XSS-Protection – Nginx / Node.js
+    4. X-Content-Type-Options - Nginx / Node.js
+    5. X-Frame-Options - Nginx / Node.js -  Важно: Этот заголовок устарел и замещён более мощным механизмом — Content-Security-Policy: frame-ancestors. Однако его всё ещё стоит использовать для поддержки старых браузеров.
+    6. CSRF Token (Anti-CSRF Token) - Next.js
+    7. Referrer-Policy - Nginx / Node.js
+    8. Permissions-Policy (formerly known as Feature-Policy) - Nginx / Node.js
+    9. Timing-Allow-Origin - Nginx / Node.js
+    10. Strict-Transport-Security (HSTS) - Nginx / Node.js
+    11. X-Download-Options - Nginx / Nodejs
+    12. X-Permitted-Cross-Domain-Policies - Nginx / Node.js
+    13. Clear-Site-Data - Nginx / Node.js
+    14. Cross-Origin-Resource-Policy - Nginx / Node.js
+    15. Cross-Origin-Embedder-Policy - Nginx / Node.js
+    16. Cross-Origin-Opener-Policy - Nginx / Node.js
+    17. Cache-Control / Expires - Nginx / Node.js
+    18. X-Powered-By - Nginx / Node.js Может быть удален или изменён, чтобы скрыть информацию о стеке
+    19. Server - Может быть удален или изменён, чтобы скрыть информацию о сервере (например, Nginx/1.23.0).
+    20. Origin-Agent-Cluster - Сообщает браузеру, что сайт хочет быть изолирован в контексте процесса для повышения защиты от спектральных атак и других side-channel атак.
+    21. Sec-Fetch-* Headers (Client Hints) - Они помогают в защите от CSRF и SSRF.
+    22. Access-Control-Allow-Origin + CORS заголовки - Хотя и не чисто «безопасностной» направленности, правильная настройка CORS (Access-Control-Allow-Origin, Access-Control-Allow-Credentials, Access-Control-Allow-Methods) критична для предотвращения нежелательных кросс-доменных запросов.
+    23. Content-Disposition - Может использоваться для предотвращения исполнения файлов (например, PDF), особенно вместе с X-Content-Type-Options: nosniff.
+    24. X-DNS-Prefetch-Control - Управляет тем, разрешено ли браузеру делать предварительный DNS-поиск. Может помочь против некоторых типов фингерпринтинга.
+    25. X-Content-Security-Policy-Report-Only - Используется для тестирования CSP без блокировки контента. Отправляет отчеты в указанный URL.
+    26. NEL - Позволяет собирать данные о сетевых ошибках (может использоваться в связке с Report-To).
+    27. Report-To - Заголовок, указывающий, куда отправлять отчеты о нарушениях (например, CSP violation reports, CORB, COOP/COEP и т.д.).
+    28. Document-Policy (экспериментальный) - Предполагается как замена Feature-Policy/Permissions-Policy для контроля функций на уровне документа.
+
+    Одни заголовки могут конфликтовать с другими (например, если применяешь Cross-Origin-Embedder-Policy, нужно правильно настроить Cross-Origin-Opener-Policy).
+
+    Обязательно использовать современные заголовки типа:
+    Permissions-Policy
+    Cross-Origin-Embedder/Opener-Policy
+    Referrer-Policy
+
+    как проверить наличие заголовка - F12 -> F5 -> Первый запрос -> Вкладка Headers
+
+    Виды атак:
+    1. XSS (Cross-Site Scripting)
+    2. CSRF (Cross-Site Request Forgery)
+    3. SQL-инъекции (SQL Injection)
+    4. Clickjacking (UI Redressing)
+    5. MITM (Man-in-the-Middle)
+    6. DoS/DDoS (Denial of Service / Distributed DoS)
+    7. SSRF (Server-Side Request Forgery)
+    8. XXE (XML External Entity Injection)
+    9. IDOR (Insecure Direct Object References)
+    10. RCE (Remote Code Execution)
+    11. LFI/RFI (Local/Remote File Inclusion)
+    12. Session Hijacking (Перехват сессии)
+    13. Phishing (Фишинг)
+    14. DNS Spoofing/Poisoning
+    15. Brute Force & Credential Stuffing
+    16. Open Redirect
+    17. Web Cache Poisoning
+    18. HTTP Request Smuggling
+    19. CORS Misconfiguration
+    20. Subdomain Takeover
+
+    gRPC передача данных
+
+    F12 -> setTimeout("console.log('hell')", 500) не должно выполняться (CSP)
