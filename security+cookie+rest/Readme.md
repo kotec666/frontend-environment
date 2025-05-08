@@ -10,6 +10,7 @@
 - [Строгая настройка CSP Next.js: middleware](https://github.com/vercel/next.js/blob/canary/examples/with-strict-csp/middleware.js)
 - [Строгая настройка CSP Next.js: script](https://github.com/vercel/next.js/blob/canary/examples/with-strict-csp/app/page.js)
 - [Настройка <br>Cache-Control, CORS, X-DNS-Prefetch-Control, Strict-Transport-Security, X-Frame-Options, Permissions-Policy, X-Content-Type-Options, Referrer-Policy <br> В NEXT.JS](https://nextjs.org/docs/app/api-reference/config/next-config-js/headers#cache-control)
+- [Permissions Policy директивы](https://www.validbot.com/header/Permissions-Policy.html)
 
 ## Содержание
 1. [Безопасность](#безопасность)
