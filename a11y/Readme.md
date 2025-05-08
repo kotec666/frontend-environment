@@ -8,6 +8,9 @@
 - [Возможные дополнения ARIA атрибутов к html элементам](https://russmaxdesign.github.io/html-elements-names/)
 - [Периодическая таблица семантики](https://gerardkcohen.github.io/periodic-table-of-semantics.html)
 - [Всевозможные aria-* и области их применения](https://docs.google.com/spreadsheets/d/1Q4qjn8v6xiHIb0Gv2kI3LF-dp-eiJBo0zLwBJCK7gVI/edit?usp=sharing)
+- [react-aria библиотека для создания accessibility компонентов](https://www.npmjs.com/package/react-aria)
+- [react-aria/dialog для создания accessibility модалок](https://www.npmjs.com/package/@react-aria/dialog)
+- [focus-trap-react библиотека для создания accessibility модальных окон](https://www.npmjs.com/package/focus-trap-react)
 
 ## Инструменты разработчика
 - Дерево доступности: F12 -> accessibility
